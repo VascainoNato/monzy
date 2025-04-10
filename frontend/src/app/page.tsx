@@ -4,7 +4,7 @@ import monzy from "../../public/monzy-pc.png"
 export default function Home() {
   return (
     <div className="flex w-full justify-center flex-col items-center pr-26 pl-26 pb-8">
-      <div className="pt-16 w-full flex flex-col items-center justify-center pb-2">
+      <div className="pt-18 w-full flex flex-col items-center justify-center pb-2">
         <h1 className="flex text-teal-500 text-4xl font-medium pb-4">Monzy converts more than Money</h1>
         <h1 className="flex text-indigo-500 text-4xl font-medium pb-8">he saves your time.</h1>
         <h4 className="flex text-indigo-500 text-2xl font-medium">Convert spreadsheets and monetary values in an easy and simplified way.</h4>
