@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AboutUs from "../../components/AboutUs";
+import Features from "../../components/Features";
 
 // Configuração da fonte Geist Sans
 const geistSans = Geist({
@@ -52,6 +53,7 @@ export default function RootLayout({
         <Header />
         {children}
         <AboutUs/>
+        <Features/>
         <Footer/>
       </body>
     </html>
