@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  image     String?
+  role      String   @default("user")
+  plan      Plan?    @relation(fields: [planId], references: [id])
+  planId    String?
+  uploads   Upload[]
+  createdAt DateTime @default(now())
+}
+
+model Upload {
+  id            String    @id @default(uuid())
+  originalName  String
+  status        String    @default("pending") // ou completed/failed
+  totalProducts Int       @default(0)
+  moedasUsadas  String    @default("USD,EUR,BRL,GBP,CAD")
+  user          User      @relation(fields: [userId], references: [id])
+  userId        String
+  products      Product[]
+  createdAt     DateTime  @default(now())
+}
+
+model Product {
+  id         String   @id @default(uuid())
+  name       String
+  expiration DateTime
+  price_usd  Float
+  price_eur  Float
+  price_brl  Float
+  price_gbp  Float
+  price_cad  Float
+  upload     Upload   @relation(fields: [uploadId], references: [id])
+  uploadId   String
+  createdAt  DateTime @default(now())
+}
+
+model Plan {
+  id         String   @id @default(uuid())
+  name       String
+  maxUploads Int
+  isPro      Boolean  @default(false)
+  users      User[]
+  createdAt  DateTime @default(now())
+}
