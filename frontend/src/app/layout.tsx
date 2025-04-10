@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 // Configuração da fonte Geist Sans
 const geistSans = Geist({
@@ -28,7 +29,7 @@ const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"], // Inclui normal e itálico
+  style: ["normal", "italic"], 
 });
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
