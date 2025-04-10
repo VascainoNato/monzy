@@ -15,7 +15,7 @@ import { ApiConsumes, ApiBody, ApiTags } from '@nestjs/swagger';
 @Controller('uploads')
 export class UploadsController {
   constructor(
-    @InjectQueue('uploadQueue') private readonly uploadQueue: Queue,
+    @InjectQueue('uploads') private readonly uploadQueue: Queue,
   ) {}
 
   @Post()
