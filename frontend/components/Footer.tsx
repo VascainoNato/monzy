@@ -47,20 +47,20 @@ const Footer = () => {
                     <div className="flex flex-col items-center justify-center gap-4">
                         <h1 className="flex font-medium text-teal-500">Company</h1>
                         <h2 className="flex font-medium text-indigo-500">82 Comendador Macedo St.</h2>
-                        <h2 className="flex font-medium text-indigo-500">Centro, Curitiba - PR 800600-030</h2>
-                        <h2 className="flex font-medium text-indigo-500 justify-start w-full">Brazil.</h2>
+                        <h2 className="flex font-medium text-indigo-500">Centro, Curitiba - PR 800600-030 - Brazil.</h2>
+                        <h2 className="flex font-medium text-indigo-500">CNPJ 35.568.645/0001-08.</h2>
                     </div>
-                    <div className="flex flex-col items-center justify-center gap-4">
-                    <h1 className="flex font-medium text-teal-500">Features</h1>
+                    <div className="flex flex-col items-center justify-center gap-4 pb-5">
+                        <h1 className="flex font-medium text-teal-500">Features</h1>
                         <h2 className="flex font-medium text-indigo-500 cursor-pointer">CSV Upload</h2>
-                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Extension</h2>
-                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Dashboard</h2>
+                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Chrome Extension</h2>
+                        <h2 className="flex font-medium text-indigo-500 cursor-pointer"></h2>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-4">
-                    <h1 className="flex font-medium text-teal-500">Pages</h1>
+                    <h1 className="flex font-medium text-teal-500">Links</h1>
                         <h2 className="flex font-medium text-indigo-500 cursor-pointer">About Us</h2>
-                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Features</h2>
-                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Pricing</h2>
+                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Services</h2>
+                        <h2 className="flex font-medium text-indigo-500 cursor-pointer">Talk with Owner</h2>
                     </div>
                 </div>
             </div>
