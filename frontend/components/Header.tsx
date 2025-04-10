@@ -17,8 +17,7 @@ const Header = () => {
         <div className='flex w-full items-center pt-2 justify-end gap-20'>
             <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Home</h1>
             <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">About Us</h1>
-            <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Features</h1>
-            <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Pricing</h1>
+            <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Services</h1>
             <button className="flex items-center bg-indigo-500 text-white h-12 w-18 justify-center rounded font-medium cursor-pointer text-1xl">Login</button>
         </div>
     </header>
