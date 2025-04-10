@@ -19,3 +19,9 @@ body {
   color: var(--foreground);
   font-family: 'Nunito';
 }
+footer {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width: 100%;
+}
