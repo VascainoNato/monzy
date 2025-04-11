@@ -15,11 +15,11 @@ const AboutUs = () => {
         </div>
         <div className="flex flex-col items-center w-1/2 gap-6 justify-center">
           <div className="flex flex-col items-center justify-center gap-3">
-            <h1 className="flex text-3xl font-medium text-indigo-500 justify-center items-center w-full">More than just a document Converter</h1>
-            <h1 className="flex text-2xl font-medium text-indigo-500 w-full justify-center">A tireless employee for your team.</h1>
+            <h1 className="flex text-3xl font-medium text-indigo-500 justify-center items-center w-full fade-title">More than just a document Converter</h1>
+            <h1 className="flex text-2xl font-medium text-indigo-500 w-full justify-center fade-title">A tireless employee for your team.</h1>
           </div>
-          <p className="flex text-2xl font-normal text-teal-500 items-center justify-center text-center">Monzy is a CSV file converter, where you can now transform these currency files into converted results with the current rate of the selected currency.</p>
-          <p className="flex text-2xl font-normal text-teal-500 items-center justify-center text-center pb-3">Developed by with unique objectives, to improve your day-to-day financial sector, payments or purchases, or also, to facilitate sending and monetary conversions during your daily use, regardless of the occasion.</p>
+          <p className="flex text-2xl font-normal text-teal-500 items-center justify-center text-center fade-title">Monzy is a CSV file converter, where you can now transform these currency files into converted results with the current rate of the selected currency.</p>
+          <p className="flex text-2xl font-normal text-teal-500 items-center justify-center text-center pb-3 fade-title">Developed by with unique objectives, to improve your day-to-day financial sector, payments or purchases, or also, to facilitate sending and monetary conversions during your daily use, regardless of the occasion.</p>
           <button className="p-3 bg-indigo-500 font-medium text-white rounded cursor-pointer">Discover Now</button>
         </div>
     </div>

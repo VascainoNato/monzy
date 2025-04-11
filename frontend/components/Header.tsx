@@ -15,12 +15,12 @@ const Header = () => {
                 height={65}
                 className="h-16 w-auto"
             />
-            <h1 className="flex items-center pt-2 font-medium text-teal-500 rounded text-1xl">Monzy - Currency Made Cuter.</h1>
+            <h1 className="fade-title flex items-center pt-2 font-medium text-teal-500 rounded text-1xl cursor-pointer" onClick={() => router.push('/')}>Monzy - Currency Made Cuter.</h1>
         </div>
         <div className='flex w-full items-center pt-2 justify-end gap-20'>
-            <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Home</h1>
-            <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">About Us</h1>
-            <h1 className="text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Services</h1>
+            <h1 className="fade-title text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Home</h1>
+            <h1 className="fade-title text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">About Us</h1>
+            <h1 className="fade-title text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer">Services</h1>
             <button className="flex items-center bg-indigo-500 text-white h-12 w-18 justify-center rounded font-medium cursor-pointer text-1xl" onClick={() => router.push('/login')}>Login</button>
         </div>
     </header>
