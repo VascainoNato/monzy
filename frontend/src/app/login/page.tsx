@@ -41,8 +41,8 @@ export default function Login() {
                     </div>
                     <div className="flex flex-col pt-12">
                         <p className="flex w-full font-normal text-teal-500 pb-1">Password</p>
-                        <input type="text" placeholder="Insert your email here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
-                        <p className='flex w-full justify-end pt-2 font-normal text-teal-500 cursor-pointer'>Forgot password</p>
+                        <input type="text" placeholder="Insert your password here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
+                        <p className='flex w-full justify-end pt-2 font-normal text-teal-500 cursor-pointer' onClick={() => router.push('/forgotPassword')}>Forgot password</p>
                     </div>
                 </div>
                 <div className='flex w-full flex-col pt-20 sm:pt-16 md:pt-14 lg:pt-12 2xl:pt-20'>

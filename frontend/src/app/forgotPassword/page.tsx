@@ -5,7 +5,7 @@ import back from "../../../public/icon-back.png";
 import monzy from "../../../public/monzy.png";
 import monzyWelcome from "../../../public/monzy-create-user.png";
 
-export default function CreateUser() {
+export default function ForgotPassword() {
   const router = useRouter();
   return (
     <>
@@ -21,7 +21,7 @@ export default function CreateUser() {
                         onClick={() => router.push('/login')}
                     />
                     <h1 className="flex font-normal text-xl text-indigo-500">|</h1>
-                    <h1 className="flex font-normal text-xl text-indigo-500 pt-1 cursor-pointer">Create User</h1>
+                    <h1 className="flex font-normal text-xl text-indigo-500 pt-1 cursor-pointer">Reset Password</h1>
                 </div>
                 <div className="flex flex-col pt-4 sm:pt-12.5 md:pt-12.5 lg:pt-6 2xl:pt-5 items-center">
                     <Image
@@ -38,12 +38,12 @@ export default function CreateUser() {
                     </div>
                     <div className="flex flex-col pt-12">
                         <p className="flex w-full font-normal text-teal-500 pb-1">Password</p>
-                        <input type="text" placeholder="Insert your password here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
+                        <input type="text" placeholder="Insert your new password here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
                     </div>
                 </div>
                 <div className='flex w-full flex-col pt-20 sm:pt-16 md:pt-14 lg:pt-12 2xl:pt-20'>
                     <div className='flex justify-center gap-2'>
-                        <button className='bg-teal-500 p-2 rounded text-white w-45 cursor-pointer'>Create User</button>
+                        <button className='bg-teal-500 p-2 rounded text-white w-45 cursor-pointer'>Reset Password</button>
                     </div>
                 </div>
           </div>
