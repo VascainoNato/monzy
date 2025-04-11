@@ -4,7 +4,12 @@ import logo from '../public/monzy.png';
 import menu from '../public/menu.png';
 import user from '../public/user.png';
 
-export default function DashboardHeader() {
+interface Props {
+    onToggleMenu?: () => void;
+}
+
+export default function DashboardHeader({ onToggleMenu }: Props) {
+
   return (
     <>
         <header className="flex w-full pt-2 items-center justify-center pb-12 border-indigo-500 border-b shadow-sm sm:flex sm:pb-2 sm:justify-around sm:border-indigo-500 sm:border-b-2 md:shadow-sm md:border-indigo-200">
@@ -14,6 +19,7 @@ export default function DashboardHeader() {
                         src={menu}
                         alt='menu-hamburger'
                         className='w-15 sm:hidden md:hidden lg:hidden 2xl:hidden'
+                        onClick={onToggleMenu}
                     />
                     <Image
                         src={logo}
@@ -30,7 +36,7 @@ export default function DashboardHeader() {
                         alt="user"
                         width={65}
                         height={65}
-                        className="fade-title h-16 w-auto"
+                        className="fade-title h-16 w-auto cursor-pointer"
                     />
                     <h1 className="fade-title items-center hidden pt-2 font-medium text-teal-500 rounded text-1xl cursor-pointer">Monzy - Currency Made Cuter.</h1>
                 </div>     
