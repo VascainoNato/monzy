@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
 
 // Configuração da fonte Geist Sans
 const geistSans = Geist({
@@ -47,6 +49,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
       >
         {children}
+        <ToastContainer/>
       </body>
     </html>
   );

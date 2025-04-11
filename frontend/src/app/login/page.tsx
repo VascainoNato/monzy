@@ -6,10 +6,18 @@ import monzy from "../../../public/monzy.png";
 import useAuth from '../hooks/useAuth';
 import google from "../../../public/google.png";
 import monzyWelcome from "../../../public/monzy-welcome-2.png";
+import useLogin from '../hooks/useLogin';
 
 export default function Login() {
   const router = useRouter();
   const  {handleGoogleLogin}  = useAuth();
+  const {
+    email,
+    password,
+    setEmail,
+    setPassword,
+    handleSubmit,
+  } = useLogin();
   return (
     <>
         <div className="fade-slide-up flex w-full flex-col md:flex-row ">
@@ -37,17 +45,17 @@ export default function Login() {
                 <div className="flex flex-col w-full pt-10 pl-10 pr-10 md:pt-10 md:pr-10 md:pl-10 lg:pl-20 lg:pr-20 lg:pt-10 2xl:pr-65 2xl:pl-65">
                     <div className="flex flex-col">
                         <p className="flex w-full font-normal text-teal-500 pb-1">Email</p>
-                        <input type="text" placeholder="Insert your email here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
+                        <input type="text" placeholder="Insert your email here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' onChange={(e) => setEmail(e.target.value)} value={email} />
                     </div>
                     <div className="flex flex-col pt-12">
                         <p className="flex w-full font-normal text-teal-500 pb-1">Password</p>
-                        <input type="text" placeholder="Insert your password here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
+                        <input type="text" placeholder="Insert your password here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' onChange={(e) => setPassword(e.target.value)} value={password}/>
                         <p className='flex w-full justify-end pt-2 font-normal text-teal-500 cursor-pointer' onClick={() => router.push('/forgotPassword')}>Forgot password</p>
                     </div>
                 </div>
                 <div className='flex w-full flex-col pt-20 sm:pt-16 md:pt-14 lg:pt-12 2xl:pt-20'>
                     <div className='flex justify-center gap-2'>
-                        <button className='bg-teal-500 p-2 rounded text-white w-40 cursor-pointer'>Enter</button>
+                        <button className='bg-teal-500 p-2 rounded text-white w-40 cursor-pointer' onClick={handleSubmit}>Enter</button>
                         <button onClick={handleGoogleLogin} className='bg-indigo-500 rounded cursor-pointer'>
                             <Image
                                 src={google}

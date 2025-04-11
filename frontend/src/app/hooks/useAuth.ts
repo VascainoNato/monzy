@@ -10,7 +10,7 @@ const useAuth = () => {
   const handleLoginRedirect = () => {
     router.push('/'); 
   };
-
+  
   return {
     handleGoogleLogin,
     handleLoginRedirect,
