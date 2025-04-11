@@ -1,60 +1,48 @@
 'use client'; 
-import { useRouter } from 'next/navigation';
-import Image from "next/image";
-import back from "../../../public/icon-back.png";
-import monzy from "../../../public/monzy.png";
-import monzyForgotPassword from "../../../public/monzy-forgot-password.png";
+import Image from 'next/image';
+import logo from '../../../public/monzy.png';
+import menu from '../../../public/menu.png';
+import user from '../../../public/user.png';
 
 export default function Dashboard() {
-  const router = useRouter();
+
   return (
     <>
-        <div className="fade-slide-up flex w-full flex-col md:flex-row ">
-            <div className="flex flex-col items-center w-full h-screen">
-                <div className="pl-4 pt-5 sm:pl-4 md:pl-6 lg:pl-10 flex w-full lg:pt-10 items-center gap-3">
-                    <Image
-                        src={back}
-                        alt="back"
-                        width={50}
-                        height={60}
-                        className="cursor-pointer"
-                        onClick={() => router.push('/login')}
-                    />
-                    <h1 className="flex font-normal text-xl text-indigo-500">|</h1>
-                    <h1 className="flex font-normal text-xl text-indigo-500 pt-1 cursor-pointer">Dashboard</h1>
+        <header className="flex w-full pt-2 items-center justify-center sm:flex sm:pb-2 sm:justify-around sm:border-indigo-500 sm:border-b-2 md:shadow-sm md:border-indigo-200">
+            <div className="flex w-full justify-around sm:justify-between sm:pl-10 sm:pr-10 md:pl-8 md:pr-8 lg:pr-6 lg:pl-6 xl:pr-4 xl:pl-4 2xl:pr-10 2xl:pl-10">
+                <Image
+                    src={menu}
+                    alt='menu-hamburger'
+                    className='w-15 sm:hidden md:hidden lg:hidden 2xl:hidden'
+                />
+                <Image
+                    src={logo}
+                    alt="Logo Monzy"
+                    width={65}
+                    height={65}
+                    className="h-15 w-auto"
+                />
+                 <div className='w-full hidden items-center justify-center sm:flex'>
+                    <input type="text" className='border flex w-1/2 border-indigo-500 rounded text-indigo-500 pt-1 pl-4 pb-1 outline outline-indigo-500 placeholder-gray-500' placeholder='Search...'/>
                 </div>
-                <div className="flex flex-col pt-4 sm:pt-12.5 md:pt-12.5 lg:pt-6 2xl:pt-5 items-center">
-                    <Image
-                        src={monzy}
-                        alt="monzy"
-                        className="h-40 w-40 md:h-40 md:w-40 lg:w-45 lg:h-45 2xl:h-50 2xl:w-50"
-                    />
-                    <h1 className="pt-8 font-base text-indigo-500 text-xl sm:text-xl sm:pt-12 md:text-xl lg:text-3xl">Monzy - Currency Made Cuter.</h1>
-                </div>
-                <div className="flex flex-col w-full pt-10 pl-10 pr-10 md:pt-10 md:pr-10 md:pl-10 lg:pl-20 lg:pr-20 lg:pt-10 2xl:pr-65 2xl:pl-65">
-                    <div className="flex flex-col">
-                        <p className="flex w-full font-normal text-teal-500 pb-1">Email</p>
-                        <input type="text" placeholder="Insert your email here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
-                    </div>
-                    <div className="flex flex-col pt-12">
-                        <p className="flex w-full font-normal text-teal-500 pb-1">Password</p>
-                        <input type="text" placeholder="Insert your new password here..." className='border rounded border-indigo-500 pt-2 pr-2 pb-2 pl-4 outline-indigo-500 text-indigo-500 placeholder-gray-400' />
-                    </div>
-                </div>
-                <div className='flex w-full flex-col pt-20 sm:pt-16 md:pt-14 lg:pt-12 2xl:pt-20'>
-                    <div className='flex justify-center gap-2'>
-                        <button className='bg-teal-500 p-2 rounded text-white w-45 cursor-pointer'>Reset Password</button>
-                    </div>
-                </div>
-          </div>
-          <div className="justify-center items-center w-full hidden lg:flex">
-            <Image
-                src={monzyForgotPassword}
-                alt='monzy-welcome'
-                className='w-full h-screen'
-            />
-          </div>
-      </div>  
+                 <Image
+                    src={user}
+                    alt="user"
+                    width={65}
+                    height={65}
+                    className="h-16 w-auto"
+                />
+                <h1 className="fade-title items-center hidden pt-2 font-medium text-teal-500 rounded text-1xl cursor-pointer">Monzy - Currency Made Cuter.</h1>
+            </div>
+            <div className='w-full hidden items-center pt-2 md:gap-20 md:flex-2 justify-center'>
+                <input type="text" className='border'/>
+            </div>
+            <div className='w-full items-center pt-2 hidden justify-end md:gap-20 flex-2'>
+                <h1 className="fade-title text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer" >Home</h1>
+                <h1 className="fade-title text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer" >About Us</h1>
+                <h1 className="fade-title text-1xl text-center md:text-left font-medium text-teal-500 cursor-pointer" >Services</h1>
+            </div>
+        </header>
     </>
   );
 }
