@@ -10,7 +10,8 @@ export class ProductController {
     @Query('name') name?: string,
     @Query('sortBy') sortBy?: 'name' | 'price_usd' | 'expiration',
     @Query('order') order: 'asc' | 'desc' = 'asc',
+    @Query('uploadId') uploadId?: string, 
   ) {
-    return this.productService.findAll({ name, sortBy, order });
+    return this.productService.findAll({ name, sortBy, order, uploadId });
   }
 }

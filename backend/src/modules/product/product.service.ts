@@ -9,11 +9,16 @@ export class ProductService {
     name?: string;
     sortBy?: 'name' | 'price_usd' | 'expiration';
     order?: 'asc' | 'desc';
+    uploadId?: string; 
   }) {
     const where: any = {};
 
     if (filters.name) {
       where.name = { contains: filters.name, mode: 'insensitive' };
+    }
+
+    if (filters.uploadId) {
+      where.uploadId = filters.uploadId; 
     }
 
     const orderBy: any = {

@@ -1,8 +1,16 @@
 'use client'; 
 import { useRouter } from 'next/navigation';
+import { useCsvUpload } from '../src/app/hooks/useCsvUpload';
 
 export default function HomePageDashboard() {
   const router = useRouter();
+  const { products, loading, error, uploadCsvFile } = useCsvUpload();
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) uploadCsvFile(file);
+  };
+
   return (
     <>
         <div className="flex w-full h-screen overflow-hidden">
@@ -22,6 +30,7 @@ export default function HomePageDashboard() {
                     <input
                         type="file"
                         accept=".csv"
+                        onChange={handleFileChange}
                         className="
                             pt-10
                             text-sm text-gray-600
@@ -31,7 +40,39 @@ export default function HomePageDashboard() {
                             file:bg-indigo-500 file:text-white
                             hover:file:bg-indigo-600"
                         />
-                </div>
+                {loading && <p className="mt-4 text-indigo-600">⌛ Processando arquivo...</p>}
+                 {error && <p className="mt-4 text-red-500">{error}</p>}
+                {products.length > 0 && (
+                    <div className="mt-6 overflow-auto">
+                    <table className="w-full border text-sm text-indigo-800 bg-white shadow-md rounded">
+                        <thead className="bg-indigo-100 border-b">
+                        <tr>
+                            <th className="p-2 text-left">Name</th>
+                            <th>Expiration</th>
+                            <th>USD</th>
+                            <th>EUR</th>
+                            <th>BRL</th>
+                            <th>GBP</th>
+                            <th>CAD</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {products.map((product) => (
+                            <tr key={product.id} className="border-b">
+                            <td className="p-2">{product.name}</td>
+                            <td>{new Date(product.expiration).toLocaleDateString()}</td>
+                            <td>${product.price_usd.toFixed(2)}</td>
+                            <td>€{product.price_eur.toFixed(2)}</td>
+                            <td>R${product.price_brl.toFixed(2)}</td>
+                            <td>£{product.price_gbp.toFixed(2)}</td>
+                            <td>C${product.price_cad.toFixed(2)}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                    </div>
+                )}
+                </div>         
             </div>
         </div>
     </>

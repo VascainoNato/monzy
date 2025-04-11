@@ -12,6 +12,16 @@ interface ProductData {
 const saveProductToDatabase = async (data: ProductData): Promise<void> => {
   const { name, expiration, conversions, uploadId } = data;
 
+  console.log(`Tentando associar ao uploadId: ${uploadId}`);
+
+
+  console.dir('Salvando produto no banco:', {
+    name,
+    expiration,
+    uploadId,
+    conversions
+  });
+
   await prisma.product.create({
     data: {
       name,
@@ -26,6 +36,7 @@ const saveProductToDatabase = async (data: ProductData): Promise<void> => {
       },
     },
   });
+  console.dir(`✅ Produto ${name} salvo com sucesso!`);
 };
 
 export default saveProductToDatabase;

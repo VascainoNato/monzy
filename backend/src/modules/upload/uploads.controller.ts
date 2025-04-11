@@ -10,6 +10,7 @@ import { InjectQueue } from '@nestjs/bull';
 import { Queue } from 'bull';
 import { Express } from 'express';
 import { ApiConsumes, ApiBody, ApiTags } from '@nestjs/swagger';
+import { v4 as uuidv4 } from 'uuid';
 
 @ApiTags('Uploads') 
 @Controller('uploads')
@@ -37,13 +38,17 @@ export class UploadsController {
       throw new BadRequestException('Nenhum arquivo foi enviado.');
     }
 
+    const uploadId = uuidv4(); 
+
     await this.uploadQueue.add('process-csv', {
       buffer: file.buffer,
       originalname: file.originalname,
+      uploadId, 
     });
 
     return {
       message: 'Arquivo recebido e enviado para processamento!',
+      uploadId,
     };
   }
 }

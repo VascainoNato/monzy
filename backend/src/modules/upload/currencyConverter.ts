@@ -2,21 +2,38 @@ import axios from 'axios';
 
 const currencyConverter = {
   convertPrice: async (price: number, baseCurrency: string): Promise<any> => {
-    const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${baseCurrency}.json`;
-    const response = await axios.get(url);
-    const rates = response.data;
+    const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${baseCurrency.toLowerCase()}.json`;
 
-    // Converte o preço para 5 moedas
-    const conversions = {};
-    const currenciesToConvert = ['EUR', 'GBP', 'JPY', 'AUD', 'CAD'];
+    console.log(`🌍 Buscando conversões para ${price} ${baseCurrency} via ${url}`);
+    
+    const response = await axios.get(url);
+    const rates = response.data?.[baseCurrency.toLowerCase()];
+
+    if (!rates) {
+      console.error(`❌ Não foi possível encontrar as taxas para a moeda base: ${baseCurrency}`);
+      throw new Error(`Moeda base inválida ou não encontrada: ${baseCurrency}`);
+    }
+
+    const conversions: Record<string, string> = {};
+    const currenciesToConvert = ['EUR', 'GBP', 'BRL', 'CAD'];
 
     currenciesToConvert.forEach(currency => {
-      conversions[currency] = (price * rates[currency]).toFixed(2); 
+      const rate = rates[currency.toLowerCase()];
+      if (rate) {
+        conversions[currency] = (price * rate).toFixed(2);
+      } else {
+        console.warn(`⚠️ Taxa de câmbio para ${currency} não encontrada.`);
+        conversions[currency] = '0.00';
+      }
     });
+
+    conversions['USD'] = price.toFixed(2); 
+
+    console.log('💱 Conversões realizadas:', conversions);
 
     return {
       original: price,
-      ...conversions
+      ...conversions,
     };
   }
 };
