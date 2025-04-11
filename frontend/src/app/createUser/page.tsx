@@ -9,7 +9,7 @@ export default function CreateUser() {
   const router = useRouter();
   return (
     <>
-        <div className="flex w-full flex-col md:flex-row ">
+        <div className="fade-slide-up flex w-full flex-col md:flex-row ">
             <div className="flex flex-col items-center w-full h-screen">
                 <div className="pl-4 pt-5 sm:pl-4 md:pl-6 lg:pl-10 flex w-full lg:pt-10 items-center gap-3">
                     <Image

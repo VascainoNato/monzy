@@ -12,7 +12,7 @@ export default function Login() {
   const  {handleGoogleLogin}  = useAuth();
   return (
     <>
-        <div className="flex w-full flex-col md:flex-row ">
+        <div className="fade-slide-up flex w-full flex-col md:flex-row ">
             <div className="flex flex-col items-center w-full h-screen">
                 <div className="pl-4 pt-5 sm:pl-4 md:pl-6 lg:pl-10 flex w-full lg:pt-10 items-center gap-3">
                     <Image
@@ -56,8 +56,8 @@ export default function Login() {
                             />
                         </button>
                     </div>
-                    <div className='flex justify-center items-center pt-20 sm:pt-18 md:pt-14 lg:pt-12 2xl:pt-20'>
-                        <p className='font-normal text-teal-500 underline underline-offset-8 cursor-pointer' onClick={() => router.push('/createUser')}>Create User</p>
+                    <div className='flex justify-center items-center pt-20 sm:pt-18 md:pt-14 lg:pt-12 2xl:pt-18'>
+                        <p className='font-normal text-teal-500 underline underline-offset-8 cursor-pointer' onClick={() => router.push('/createUser')}>Don’t have an account? Create one</p>
                     </div>
                 </div>
           </div>

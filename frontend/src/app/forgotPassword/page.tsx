@@ -3,13 +3,13 @@ import { useRouter } from 'next/navigation';
 import Image from "next/image";
 import back from "../../../public/icon-back.png";
 import monzy from "../../../public/monzy.png";
-import monzyWelcome from "../../../public/monzy-create-user.png";
+import monzyForgotPassword from "../../../public/monzy-forgot-password.png";
 
 export default function ForgotPassword() {
   const router = useRouter();
   return (
     <>
-        <div className="flex w-full flex-col md:flex-row ">
+        <div className="fade-slide-up flex w-full flex-col md:flex-row ">
             <div className="flex flex-col items-center w-full h-screen">
                 <div className="pl-4 pt-5 sm:pl-4 md:pl-6 lg:pl-10 flex w-full lg:pt-10 items-center gap-3">
                     <Image
@@ -49,7 +49,7 @@ export default function ForgotPassword() {
           </div>
           <div className="justify-center items-center w-full hidden lg:flex">
             <Image
-                src={monzyWelcome}
+                src={monzyForgotPassword}
                 alt='monzy-welcome'
                 className='w-full h-screen'
             />

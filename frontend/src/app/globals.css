@@ -24,3 +24,45 @@ footer {
   left: 0;
   width: 100%;
 }
+
+/* Fade + Slide Up */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide-up {
+  animation: fadeSlideUp 0.6s ease-out forwards;
+}
+
+/* Scale + Fade In */
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.7s ease-out forwards;
+  animation-delay: 0.8s; 
+}
+
+/* Botão com hover suave */
+button {
+  transition: transform 0.8s ease, background-color 0.8s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
