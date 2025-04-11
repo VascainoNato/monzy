@@ -5,6 +5,6 @@ import { Controller, Get } from '@nestjs/common';
 export class UserController {
   @Get()
   findAll() {
-    return [{ id: 1, name: 'User Test' }]; // placeholder
+    return [{ id: 1, name: 'User Test' }]; 
   }
 }

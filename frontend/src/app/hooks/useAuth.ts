@@ -8,7 +8,7 @@ const useAuth = () => {
   };
 
   const handleLoginRedirect = () => {
-    router.push('/'); 
+    router.push('/dashboard'); 
   };
   
   return {
