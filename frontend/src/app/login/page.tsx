@@ -5,6 +5,7 @@ import back from "../../../public/icon-back.png";
 import monzy from "../../../public/monzy.png";
 import useAuth from '../hooks/useAuth';
 import google from "../../../public/google.png";
+import monzyWelcome from "../../../public/monzy-welcome-2.png";
 
 export default function Login() {
   const router = useRouter();
@@ -60,8 +61,12 @@ export default function Login() {
                     </div>
                 </div>
           </div>
-          <div className="flex justify-center items-center w-full bg-indigo-500 ">
-              1
+          <div className="justify-center items-center w-full hidden lg:flex">
+            <Image
+                src={monzyWelcome}
+                alt='monzy-welcome'
+                className='w-full h-screen'
+            />
           </div>
       </div>  
     </>
