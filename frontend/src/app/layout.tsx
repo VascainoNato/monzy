@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Nunito, Poppins } from "next/font/google";
 import "./globals.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import AboutUs from "../../components/AboutUs";
-import Features from "../../components/Features";
 
 // Configuração da fonte Geist Sans
 const geistSans = Geist({
@@ -50,11 +46,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${nunito.variable} ${poppins.variable} antialiased`}
       >
-        <Header />
         {children}
-        <AboutUs/>
-        <Features/>
-        <Footer/>
       </body>
     </html>
   );
