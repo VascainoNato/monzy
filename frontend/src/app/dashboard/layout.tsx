@@ -27,10 +27,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   return (
     <div className="relative h-screen overflow-hidden">
       <DashboardHeader onToggleMenu={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
-      <div className="hidden sm:flex">
-        <HomePageDashboard />
-      </div>
-
+      <HomePageDashboard />
       {(isMobileMenuOpen || isAnimatingOut) && (
         <div className={`absolute top-0 left-0 z-50 w-3/5 h-full bg-indigo-500 sm:hidden flex flex-col p-6 gap-6
           ${isAnimatingOut ? 'animate-slide-out' : 'animate-slide-in'}
@@ -42,14 +39,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             ✕
           </button>
           <div className="flex flex-col pt-12 gap-6 justify-between h-screen">
-            <div className="flex flex-col justify-between h-1/5">
-              <h1 className="text-white text-lg font-medium cursor-pointer">Dashboard</h1>
+            <div className="flex flex-col justify-around h-1/5">
               <h1 className="text-white text-lg font-medium cursor-pointer">Uploads</h1>
               <h1 className="text-white text-lg font-medium cursor-pointer">Settings</h1>
             </div>
           </div>
         </div>
       )}
+
       <main className="h-full overflow-auto">{children}</main>
     </div>
   );
